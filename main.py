@@ -11,14 +11,24 @@ templates = Jinja2Templates(directory='templates')
 
 @app.get('/index.html', response_class=HTMLResponse)
 def index(request: Request):
-    return templates.TemplateResponse('index.html', {'request': request})
+    return templates.TemplateResponse('/index.html', {'request': request})
 
+@app.get('/index', response_class=HTMLResponse)
+def index(request: Request):
+    return templates.TemplateResponse('/index.html', {'request': request})
 
 @app.get('/about.html', response_class=HTMLResponse)
 def index(request: Request):
-    return templates.TemplateResponse('about.html', {'request': request})
+    return templates.TemplateResponse('/about.html', {'request': request})
 
+@app.get('/about', response_class=HTMLResponse)
+def index(request: Request):
+    return templates.TemplateResponse('/about.html', {'request': request})
 
 @app.get('/contacts.html', response_class=HTMLResponse)
 def index(request: Request):
-    return templates.TemplateResponse('contacts.html', {'request': request})
+    return templates.TemplateResponse('/contacts.html', {'request': request})
+
+@app.get('/contacts', response_class=HTMLResponse)
+def index(request: Request):
+    return templates.TemplateResponse('/contacts.html', {'request': request})
